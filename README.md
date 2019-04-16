@@ -15,4 +15,12 @@ approcah: any client who wants to register will give 2 unique tokens(strings). o
           now server verifies if both tokens are valid with respect to user details and then issues new auth token and new               refresh token and updates into database. and clients send new request with new token.
           
           
-load balancer:  first request is received by load balancer, checks the which server is having less number of requests and                     forwards the request. i am thinking to maintain the global count of each node server .
+load balancer:  first request is received by load balancer, from here load balancer forwards request to 3 api servers one after other.
+
+
+download the project and go to api-service and run command docker-compose up
+
+now port 5050 is accessible which is load balancer.
+
+first it asks email id and password in headers. we should set headers as email:"enter your email" and pwd:"enter your password" and send request to port 5050.
+
